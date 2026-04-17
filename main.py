@@ -12,7 +12,7 @@ from db import DBHelperClass
 
 db = DBHelperClass()
 # ---------------- CONFIG ----------------
-CSV_FILE = "SD_Pull_Melissa.csv"
+CSV_FILE = "SD_Pull_Melissa2.csv"
 BATCH_SIZE = 50        # max concurrent threads (safe for Melissa)
 REQUEST_TIMEOUT = 10   # seconds
 SLEEP_BETWEEN_BATCHES = 1  # seconds
@@ -70,9 +70,11 @@ def get_melissa_data(address, original_data, index):
 
     except requests.exceptions.Timeout:
         print(f"[TIMEOUT] index={index} | {address}")
+        time.sleep(5)  # brief pause before next attempt
 
     except requests.exceptions.RequestException as e:
         print(f"[REQUEST ERROR] index={index} | {address} | {e}")
+        
 
     except Exception as e:
         print(f"[UNEXPECTED ERROR] index={index} | {address} | {e}")
