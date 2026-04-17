@@ -12,7 +12,7 @@ from db import DBHelperClass
 
 db = DBHelperClass()
 # ---------------- CONFIG ----------------
-CSV_FILE = "Temecula_Murrieta_needs_Melissa.csv"
+CSV_FILE = "SD_Pull_Melissa.csv"
 BATCH_SIZE = 50        # max concurrent threads (safe for Melissa)
 REQUEST_TIMEOUT = 10   # seconds
 SLEEP_BETWEEN_BATCHES = 1  # seconds
@@ -84,7 +84,7 @@ if __name__ == "__main__":
     
     total = len(all_addresses)
 
-    for i in range(1920, total, BATCH_SIZE):
+    for i in range(1, total, BATCH_SIZE):
         print(f"--- Processing batch starting at index {i} ---")
         threads = []
         batch = all_addresses[i:i + BATCH_SIZE]
