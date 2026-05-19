@@ -12,7 +12,7 @@ from db import DBHelperClass
 
 db = DBHelperClass()
 # ---------------- CONFIG ----------------
-CSV_FILE = "Raul2_Pull_Melissa_Export.csv"
+CSV_FILE = "miramesascriptsranchranchos.csv"
 BATCH_SIZE = 50        # max concurrent threads (safe for Melissa)
 REQUEST_TIMEOUT = 10   # seconds
 SLEEP_BETWEEN_BATCHES = 1  # seconds
